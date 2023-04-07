@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+ - let results =  [{flower_name:"rose",flower_color:"red",flower_size:"3 cm"},{flower_name:"lotus",flower_color:"white",flower_size:"10 cm"},{flower_name:"sunflowers",flower_color:"white",flower_size:"9 cm"}]
+  div(class="container-fluid")
+    div(class="row")
+      each item,index in results
+        div(class="col-sm-2",onClick=`buy(${index})`)
+          p name is #{item.flower_name}
+          p color is #{item.flower_color}
+          p size is #{item.flower_size}
+          
+
+  //- Bonus Logic
+  script.
+    function buy(itr) {
+      itr = itr+1;
+      alert(`You Purchased Item ${itr}`);
+    }

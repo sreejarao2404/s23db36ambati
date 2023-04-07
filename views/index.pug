@@ -1,0 +1,19 @@
+extends layout 
+
+block content
+  h1= title
+  p sreeja rao's S23wb36ambati #{title}
+
+  button(type="button", class="btn btn-secondary", onclick="doReduce()") Press Me
+
+
+  div(id = "reduce") Reduce the value
+  a(href="flowers") LINK
+  script.
+      count = 20
+      change  = -1
+      function doReduce(){
+          count += change;
+          change -= 1;
+          document.getElementById('reduce').innerHTML = `Count ${count} Change ${change}`;
+      }

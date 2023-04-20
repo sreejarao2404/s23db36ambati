@@ -1,0 +1,21 @@
+extends layout
+block content
+ h1= title
+ - let flowersid = toShow._id
+ - let flower_name = toShow.flower_name
+ - let flower_color = toShow.flower_color
+ - let flower_size = toShow.flower_size
+ div
+  div.row
+   div(class='flowersAttr mr-3') flowers id is:
+   div #{flowersid}
+  div.row
+   div(class='flowersAttr mr-3') flowers name is:
+   div #{flower_name}
+  div.row
+   div(class='flowersAttr mr-3') flowers color is:
+   div #{flower_color}
+  div.row
+   div(class='flowersAttr mr-3') flowers size is:
+   div #{flower_size}
+  

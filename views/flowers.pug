@@ -1,15 +1,23 @@
 extends layout
 
 block content
-  h1= title
-   - let  flowers=results;
-   div(class="container-fluid")
-    div(class="row")
-      each item,index in flowers
+ h1= title
+  - let  flowers=results;
+  div(class="container-fluid")
+     div(class="row")
+       each item,index in flowers
+        - let destination = `dispatch(\"/flowers/update?id=${item._id}\")`
         div(class="col-sm-2",onClick=`buy(${index})`)
-          p name is #{item.flower_name}
-          p color is #{item.flower_color}
-          p size is #{item.flower_size}
+         p name is #{item.flower_name}
+         p color is #{item.flower_color}
+         p size is #{item.flower_size}
+
+        button.btn( class="btn-primary ml-1", onclick= destination) Update
+
+  script.
+   function dispatch(path){
+    window.location.href=path
+   }
           
 
   //- Bonus Logic
